@@ -1,0 +1,10 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="200" fill="#FFF4C7" rx="30"></rect>
+  <circle cx="100" cy="100" r="60" fill="#FFEB70"></circle>
+  <text x="100" y="115" font-family="Arial, sans-serif" font-size="50" fill="#5A4E7C" text-anchor="middle" font-weight="bold">
+    C
+  </text>
+  <text x="100" y="180" font-family="Arial, sans-serif" font-size="24" fill="#5A4E7C" text-anchor="middle">
+    ComuniPro
+  </text>
+</svg>

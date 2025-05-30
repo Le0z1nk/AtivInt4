@@ -1,0 +1,168 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    background-color: #f9f6fb;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 80px;
+    background-color: #fff4c7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    gap: 20px;
+    height: 100vh;
+    position: fixed;
+}
+
+.sidebar button, .sidebar .logo {
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: background-color 0.3s;
+}
+
+.sidebar button:hover {
+    background-color: #ffe96e;
+}
+
+.sidebar .logo {
+    font-weight: bold;
+    background-color: #ffeb70;
+    font-size: 18px;
+}
+
+.sidebar img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+}
+
+/* Main */
+main {
+    margin-left: 100px;
+    padding: 20px;
+    width: calc(100% - 100px);
+}
+
+.header {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Sections */
+.section {
+    margin-bottom: 50px;
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+/* Carousel */
+.carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.cards {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 15px;
+    width: 250px;
+    height: 180px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    position: relative;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.card-title {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(255, 244, 199, 0.95);
+    text-align: center;
+    padding: 8px 0;
+    font-weight: bold;
+    color: #333;
+    font-size: 16px;
+    backdrop-filter: blur(2px);
+}
+
+/* Carousel buttons */
+.carousel button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 2;
+}
+
+.carousel .prev {
+    left: 0;
+}
+
+.carousel .next {
+    right: 0;
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    background-color: #fff4c7;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    font-weight: bold;
+}
