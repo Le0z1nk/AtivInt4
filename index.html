@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo de Serviços</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Catálogo de Serviços</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <header>
+    <nav class="navbar">
+      <img src="logooo.svg" alt="Logo" class="logo"/>
+      <ul class="nav-links">
+        <li><a href="#" onclick="abrirLogin()">Login</a></li>
+        <li><a href="#" onclick="abrirCadastro()">Cadastro</a></li>
+        <li><a href="#" onclick="mostrarMapa()">Mapa</a></li>
+        <li><a href="#feedback">Feedback</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <div class="logo">
-            <img src="logooo.svg" alt="Logo da Empresa">
-        </div>
-        <button><img src="login.png" alt="Login"></button>
-        <button><img src="cadastro.jpg" alt="Cadastro"></button>
-        <button><img src="mapa.png" alt="Menu Região"></button>
-    </div>
+  <main>
+    <div class="header">Catálogo de Serviços</div>
 
-    <!-- Main -->
-    <main>
-        <div class="header">Catálogo de Serviços</div>
+    <!-- CARROSSEL DE SERVIÇOS
+       <div class="header">Catálogo de Serviços</div> -->
 
         <!-- Seção 1 -->
         <section class="section">
@@ -115,12 +118,52 @@
                 <button class="next">&#10095;</button>
             </div>
         </section>
-    </main>
 
-    <footer>
-        © 2025 Catálogo de Serviços - Todos os direitos reservados
-    </footer>
+    <!-- MAPA -->
+    <section id="mapa" style="display:none;">
+      <h2>Serviços Próximos</h2>
+      <iframe src="https://www.google.com/maps" width="100%" height="300"></iframe>
+    </section>
 
-    <script src="comuni.js"></script>
+    <!-- FEEDBACK -->
+    <section id="feedback" class="section">
+      <div class="section-title">Deixe seu Feedback</div>
+      <form onsubmit="return enviarFeedback(event)">
+        <textarea id="mensagem" placeholder="Digite seu feedback..." required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+
+    <!-- LISTA DE FEEDBACKS -->
+    <section class="section">
+      <div class="section-title">O que estão dizendo:</div>
+      <ul id="listaFeedbacks"></ul>
+    </section>
+  </main>
+
+  <!-- Modal Login -->
+  <div id="modalLogin" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="fecharLogin()">&times;</span>
+      <h2>Login</h2>
+      <input type="text" id="usuario" placeholder="Usuário" />
+      <input type="password" id="senha" placeholder="Senha" />
+      <button onclick="fazerLogin()">Entrar</button>
+    </div>
+  </div>
+
+  <!-- Modal Cadastro -->
+  <div id="modalCadastro" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="fecharCadastro()">&times;</span>
+      <h2>Cadastro</h2>
+      <input type="text" id="novoUsuario" placeholder="Novo usuário" />
+      <input type="password" id="novaSenha" placeholder="Senha" />
+      <button onclick="cadastrarUsuario()">Cadastrar</button>
+    </div>
+  </div>
+
+  <footer>© 2025 Catálogo de Serviços</footer>
+  <script src="comuni.js"></script>
 </body>
 </html>
