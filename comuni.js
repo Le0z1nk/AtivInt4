@@ -100,3 +100,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+function abrirModalServico(titulo, descricao) {
+  document.getElementById('servicoTitulo').textContent = titulo;
+  document.getElementById('descricaoServico').textContent = descricao;
+  document.getElementById('modalServico').style.display = 'block';
+}
+
+function fecharModalServico() {
+  document.getElementById('modalServico').style.display = 'none';
+}
+
+function enviarContratacao(event) {
+  event.preventDefault();
+  const nome = document.getElementById('nomeCliente').value;
+  const email = document.getElementById('emailCliente').value;
+  const telefone = document.getElementById('telefoneCliente').value;
+  const cartao = document.getElementById('cartaoCliente').value;
+
+  // Aqui você pode enviar para o backend
+  alert(`Serviço contratado com sucesso por ${nome}!`);
+
+  // Limpar formulário
+  event.target.reset();
+  fecharModalServico();
+}

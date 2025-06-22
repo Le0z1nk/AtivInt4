@@ -31,15 +31,16 @@
             <div class="carousel">
                 <button class="prev">&#10094;</button>
                 <div class="cards">
-                    <div class="card">
-                        <img src="imagens/eletricista.png" alt="Eletricista">
-                        
-                        <div class="card-title">Eletricista</div>
-                    </div>
-                    <div class="card">
-                        <img src="imagens/encanador.png" alt="Encanador">
-                        <div class="card-title">Encanador</div>
-                    </div>
+                  <div class="card" onclick="abrirModalServico('Refrigeração e Manutenção', 'Empresa especializada em consertos de ar-condicionado, geladeiras, freezers e manutenção geral.')">
+                    <img src="LM.png" alt="Refrigeração e Manutenção">
+                    <div class="card-title">Refrigeração e Manutenção</div>
+                  </div>
+                  
+                  <div class="card" onclick="abrirModalServico('Segurança Eletrônica', 'Instalação e manutenção de câmeras, alarmes, cercas elétricas e sistemas de monitoramento.')">
+                    <img src="primesolut.jpg" alt="Segurança Eletrônica">
+                    <div class="card-title">Segurança Eletrônica</div>
+                  </div>
+                  
                     <div class="card">
                         <img src="imagens/pintor.png" alt="Pintor">
                         <div class="card-title">Pintor</div>
@@ -126,10 +127,12 @@
     </section>
 
     <!-- FEEDBACK -->
-    <section id="feedback" class="section">
-      <div class="section-title">Deixe seu Feedback</div>
-      <form onsubmit="return enviarFeedback(event)">
-        <textarea id="mensagem" placeholder="Digite seu feedback..." required></textarea>
+    <section id="feedback" class="section" aria-labelledby="feedback-title">
+      <h2 id="feedback-title" class="section-title">Deixe seu Feedback</h2>
+      <form onsubmit="return enviarFeedback(event)" aria-describedby="feedback-desc">
+        <p id="feedback-desc">Nos diga o que achou do site ou envie sugestões.</p>
+        <label for="mensagem" class="visually-hidden"></label>
+        <textarea id="mensagem" name="mensagem" placeholder="Digite seu feedback..." required></textarea>
         <button type="submit">Enviar</button>
       </form>
     </section>
@@ -162,6 +165,22 @@
       <button onclick="cadastrarUsuario()">Cadastrar</button>
     </div>
   </div>
+
+  <!-- Modal de Contratação -->
+<div id="modalServico" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="fecharModalServico()">&times;</span>
+    <h2 id="servicoTitulo">Título do Serviço</h2>
+    <p id="descricaoServico">Descrição da empresa e detalhes do serviço.</p>
+    <form onsubmit="enviarContratacao(event)">
+      <input type="text" id="nomeCliente" placeholder="Seu nome" required />
+      <input type="email" id="emailCliente" placeholder="Seu email" required />
+      <input type="tel" id="telefoneCliente" placeholder="Seu telefone" required />
+      <input type="text" id="cartaoCliente" placeholder="Dados do cartão" required />
+      <button type="submit">Contratar</button>
+    </form>
+  </div>
+</div>
 
   <footer>© 2025 Catálogo de Serviços</footer>
   <script src="comuni.js"></script>
