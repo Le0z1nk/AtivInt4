@@ -219,8 +219,6 @@ def login_page():
     return render_template("login.html")
 
 
-# ### ALTERAÇÃO AQUI ###
-# A função foi renomeada para corresponder ao que o template espera
 @app.route("/cadastrar-servico")
 def cadastrar_servico():
     return render_template("cadastrar_servico.html")
