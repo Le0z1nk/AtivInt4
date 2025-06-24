@@ -1,7 +1,5 @@
-/* Importa a fonte Poppins do Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
-/* Reset Básico e Estilo Global */
 * {
   margin: 0;
   padding: 0;
@@ -10,8 +8,8 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #f8f9fa; /* Um cinza muito claro para o fundo */
-  color: #343a40; /* Cinza escuro para o texto, melhor que preto puro */
+  background-color: #f8f9fa;
+  color: #343a40;
 }
 
 /* Header e Navegação */
