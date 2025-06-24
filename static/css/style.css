@@ -1,0 +1,362 @@
+/* Importa a fonte Poppins do Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* Reset Básico e Estilo Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f8f9fa; /* Um cinza muito claro para o fundo */
+  color: #343a40; /* Cinza escuro para o texto, melhor que preto puro */
+}
+
+/* Header e Navegação */
+header {
+  background-color: #ffffff;
+  padding: 15px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  width: 45px;
+  height: 45px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  list-style: none;
+  margin-left: auto;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #495057;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-links li a:hover {
+  background-color: #e9ecef;
+  color: #ffcb05;
+}
+
+/* Conteúdo Principal */
+main {
+  padding: 40px 50px;
+}
+
+.main-header {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #212529;
+}
+
+/* Seções e Títulos */
+.section {
+  margin-bottom: 60px;
+}
+
+.section-title {
+  font-weight: 600;
+  font-size: 24px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+/* Carrossel e Cards */
+.carousel {
+  position: relative;
+}
+
+.cards {
+  display: flex;
+  gap: 25px;
+  overflow-x: auto; /* Permite scroll horizontal */
+  scroll-behavior: smooth;
+  padding: 10px 0;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+/* Esconde a barra de rolagem do carrossel */
+.cards::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  width: 280px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.card img {
+  width: 100%;
+  height: 200px; /* Altura fixa para as imagens */
+  object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+  display: block;
+}
+
+.card-title {
+  padding: 15px;
+  font-weight: 600;
+  font-size: 18px;
+  text-align: center;
+  background-color: #fff;
+}
+
+/* Botões do Carrossel */
+.carousel .carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.carousel .carousel-btn:hover {
+  background-color: #ffe96e;
+  color: #495057;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel .prev {
+  left: -20px;
+}
+
+.carousel .next {
+  right: -20px;
+}
+
+/* Seção de Feedback */
+#feedback {
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  max-width: 700px;
+  margin: 60px auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+#feedback .section-title {
+  text-align: center;
+  border-bottom: none;
+}
+
+#feedback textarea {
+  width: 100%;
+  height: 150px;
+  padding: 15px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ced4da;
+  resize: vertical;
+  margin-bottom: 15px;
+}
+
+#feedback button,
+.modal-content button {
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #ffeb70;
+  color: #495057;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#feedback button:hover,
+.modal-content button:hover {
+  background-color: #ffe96e;
+  transform: scale(1.05);
+}
+
+/* Lista de Feedbacks */
+#listaFeedbacks {
+  list-style: none;
+  padding: 0;
+  max-width: 700px;
+  margin: auto;
+}
+
+#listaFeedbacks li {
+  background: #ffffff;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  border-left: 4px solid #ffcb05;
+}
+
+/* Modais */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1001;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 30px;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content input {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ced4da;
+  font-size: 16px;
+}
+
+.close {
+  float: right;
+  font-size: 28px;
+  cursor: pointer;
+  color: #aaa;
+  transition: color 0.2s;
+}
+.close:hover {
+  color: #333;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  background-color: #e9ecef;
+  color: #6c757d;
+  font-weight: 500;
+}
+a.card-link,
+a.card-link:hover {
+  text-decoration: none; /* Remove o sublinhado */
+  color: inherit; /* Faz o texto dentro do link herdar a cor normal */
+}
+
+.form-container {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #495057;
+  font-size: 0.9rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="url"],
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  font-family: "Poppins", sans-serif;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="url"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #ffe96e;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+  background-color: #fff;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-container button[type="submit"] {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background-color: #ffeb70;
+  color: #495057;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  margin-top: 1rem;
+}
+
+.form-container button[type="submit"]:hover {
+  background-color: #ffe96e;
+  transform: translateY(-2px);
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastrar Serviço - Catálogo</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="{{ url_for('serve_index') }}"><img src="{{ url_for('static', filename='images/logooo.svg') }}" alt="Logo" class="logo" /></a>
+      <ul class="nav-links">
+        <!-- O JavaScript irá popular este menu -->
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="main-header">Cadastrar Novo Serviço</div>
+    <section class="section">
+      <!-- Formulário sem 'action', com um ID para o JavaScript encontrar -->
+      <form id="form-cadastro-servico" class="form-container">
+        <div class="form-group">
+          <label for="nome">Nome do Serviço</label>
+          <input type="text" id="nome" name="nome" required>
+        </div>
+        <div class="form-group">
+          <label for="imagem_url">URL da Imagem</label>
+          <input type="url" id="imagem_url" name="imagem_url" required>
+        </div>
+        <div class="form-group">
+          <label for="categoria">Categoria</label>
+          <select id="categoria" name="categoria" required>
+            <option value="populares">Serviços Populares</option>
+            <option value="cuidados">Cuidados Pessoais e Residenciais</option>
+            <option value="criativos">Serviços Criativos e de Bem-Estar</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="descricao">Informações Sobre o Serviço</label>
+          <textarea id="descricao" name="descricao" rows="5" required></textarea>
+        </div>
+        <button type="submit">Cadastrar</button>
+      </form>
+    </section>
+  </main>
+  <footer>© 2025 Catálogo de Serviços</footer>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>

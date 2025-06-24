@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Catálogo de Serviços</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+
+<body>
+  <div class="login-container">
+    <form class="login-form" onsubmit="return fazerLogin(event)">
+      <h2>Acesse sua Conta</h2>
+      <div class="input-group">
+        <label for="usuario">Usuário</label>
+        <input type="text" id="usuario" name="usuario" required>
+      </div>
+      <div class="input-group">
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" name="senha" required>
+      </div>
+      <button type="submit">Entrar</button>
+      <div class="form-footer">
+        <a href="#">Esqueceu a senha?</a>
+        <a href="{{ url_for('serve_index') }}">Voltar para o Início</a>
+      </div>
+    </form>
+  </div>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>
